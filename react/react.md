@@ -49,3 +49,18 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
 ```
 > react语法
 ```
+<div id="example">
+        <script type="text/babel">    //可以写在标签的任意位置
+                var CommentBox = React.createClass({    //名字首字母必须大写一区分标签和jsx,在组件里注释无效
+                    render: function(){
+                        return (                       //只能返回一个元素不论有几个子元素
+                           <div className="commentBox">
+                            Hello world ! update!!!.
+                            </div>
+                        );
+                    }
+                })            //花括号后面不要加冒号
+                ReactDOM.render(<CommentBox />, document.getElementById('example'));
+        </script>
+    </div>
+```
