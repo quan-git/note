@@ -36,3 +36,16 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
 性能比原生DOM快很多。
 ```
 # 应用
+> ReactDOM.reader()
+
+用于将模板转为html语言并指定插入dom节点
+```
+<script type="text/babel">   //这里的type必须为text/babel凡是有JSX语法都要这样写它解析JSX语法
+   ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('example')
+  );
+</script>
+```
+> react语法
+```
