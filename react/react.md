@@ -64,3 +64,138 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
         </script>
     </div>
 ```
+> html和js混搭
+```
+<div id="example">
+        <script type="text/babel">
+                var names = ['ZhangShuai', 'WangSiqi', 'WangTongtong', 'LiRui'];
+                ReactDOM.render(<div>{names.map(function(name){       //花括号里写js代码,ReactDOM可以是标签也是组件
+                   return <h1>Hello, {name}!</h1>
+                })}</div>,
+                     document.getElementById('example'));
+        </script>
+    </div>
+    ```
+>  jsx可以接收一个数组,会展开数组的所有成员
+```
+ <div id="example">
+        <script type="text/babel">
+                var arr = [
+                    <h1>欢迎来到北京菜鸟在线</h1>,
+                    <h2>我们现在学习是的React的语法知识.</h2>,
+                ];
+                ReactDOM.render(<div>{arr}</div>, document.getElementById('example'));
+        </script>
+    </div>
+    
+   ```
+   > 组件
+   ```
+   <div id="example">
+        <script type="text/babel">
+                var HMessage = React.createClass({
+                    render: function(){
+                        return <h1>Hello {this.props.name }</h1>
+                    }
+                });
+                ReactDOM.render(<HMessage name="Joho" />, //注意给组件添加属性的时候class属性要写成className,for要写成htmlFor
+                     document.getElementById('example'));
+        </script>
+    </div>
+    ```
+    > this.props.children
+    ```
+    div id="example">
+        <script type="text/babel">
+            var NoteList = React.createClass({
+                render: function(){
+                    return (
+                        <ol>
+                        {
+                            React.Children.map(this.props.children, function(child){  //this.props可以访问属性
+                                return <li>{child}</li>
+                            })
+                        }
+                        </ol>
+                    );
+                }
+            });
+
+            ReactDOM.render(
+                <NoteList>
+                <span>hello</span>    //写在模板标签中间可以是key,value也可以是标签但是写的格式不相同
+                <span>world</span>
+                </NoteList>,
+                document.body
+            );
+        </script>
+    </div>
+    ```
+   > PropTypes   属性可以接受任意值
+   ```
+   <div id="example">
+        <script type="text/babel">
+            var data = "BeiJing Cainiao";
+            var Mytitle = React.createClass({
+                propTypes: {                //因为属性可以接收任何值所以用这种机制来限制属性类型这里设置必须是字符串如果不是会在控制台
+                    title: React.PropTypes.string.isRequired, 输出错误,效果显示
+                },
+                render: function(){
+                    return <h1>{this.props.title}</h1>
+                }
+            });
+            ReactDOM.render(
+                <Mytitle title={data} />,
+                document.getElementById("example")
+            );
+        </script>
+    </div>
+    ```
+    > getDefaulteProps
+    ```
+    var data = "BeiJing Cainiao";
+    var Mytitle = React.createClass({
+        getDefaultProps: function(){     //用来设置属性默认值
+           return{
+                title: "HTML5",
+            };
+        },
+        render: function(){
+            return <h1>{this.props.title}</h1>
+        }
+    });
+    ReactDOM.render(
+        <Mytitle />,
+        document.getElementById("example")
+    );
+    ```
+ > this.state
+ ```
+ <div id="example">
+        <script type="text/babel">
+            var LikeButton = React.createClass({
+                getInitialState: function(){    //用于定义初始化状态也就是一个对象这个对象可以通过this.state属性修改状态
+                    return {liked: false};
+                },
+                handleClick: function(){        //注册点击事件并该变this.state.liked的值
+                    this.setState({liked: !this.state.liked});
+                },
+                render: function(){
+                    var text = this.state.liked ? 'like' : 'haven\'t liked';
+                    return(
+                        <p onClick={this.handleClick}>
+                            You {text} this. Click to toggle.
+                        </p>
+                    );
+                }
+            });
+            ReactDOM.render(
+                <LikeButton />,
+                document.getElementById('example')
+            );
+        </script>
+    </div>
+    ```
+    > 表单
+    ```
+    
