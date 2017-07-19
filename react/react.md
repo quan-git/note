@@ -40,29 +40,8 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
 ```
 用于将模板转为html语言并指定插入dom节点
 ```
-# 设置标签样式
-> 第一种设置css样式
-```
-render:function(){
-return 
-<div className></div>  //注意这里设置类名是className
-}
-```
-> 第二种设置行内样式
-```
-render:function(){
-return 
-<div style={{width:'100px',height:'100px'}}></div>
-}
-```
-> 第三种
-```
-render:function(){
-return
-var b={width:'100px',height:'100px'};
-<div style={b}>
-}
-```
+
+> jsx
 ```
 <script type="text/babel">   //这里的type必须为text/babel凡是有JSX语法都要这样写它解析JSX语法
    ReactDOM.render(
@@ -173,7 +152,7 @@ var b={width:'100px',height:'100px'};
                 }
             });
             ReactDOM.render(
-                <Mytitle title={data} />.
+                <Mytitle title={data} />,
                 document.getElementById("example")
             );
         </script>
@@ -197,7 +176,7 @@ var b={width:'100px',height:'100px'};
         }
     });
     ReactDOM.render(
-        <Mytitle />
+        <Mytitle />,
         document.getElementById("example")
     );
 ```
@@ -219,7 +198,7 @@ var b={width:'100px',height:'100px'};
                     var text = this.state.liked ? 'like' : 'haven\'t liked';
                     return(
                         <p onClick={this.handleClick}>
-                            You {text} this. Click to toggle.
+                            You {text} this. Click to toggle
                         </p>
                     );
                 }
@@ -231,4 +210,26 @@ var b={width:'100px',height:'100px'};
         </script>
     </div>
 ```
-  
+# 设置标签样式
+> 第一种设置css样式
+```
+render:function(){
+return 
+<div className></div>  //注意这里设置类名是className
+}
+```
+> 第二种设置行内样式
+```
+render:function(){
+return 
+<div style={{width:'100px',height:'100px'}}></div>
+}
+```
+> 第三种
+```
+render:function(){
+return
+var b={width:'100px',height:'100px'};
+<div style={b}>
+}
+```
