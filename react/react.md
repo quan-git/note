@@ -88,9 +88,9 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
         </script>
     </div>
     
-   ```
-   > 组件
-   ```
+```
+> 组件
+```
    <div id="example">
         <script type="text/babel">
                 var HMessage = React.createClass({
@@ -102,9 +102,9 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
                      document.getElementById('example'));
         </script>
     </div>
-    ```
-    > this.props.children
-    ```
+```
+> this.props.children
+```
     div id="example">
         <script type="text/babel">
             var NoteList = React.createClass({
@@ -130,9 +130,11 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
             );
         </script>
     </div>
-    ```
-   > PropTypes   属性可以接受任意值
-   ```
+    
+```
+  
+> 属性 属性可以接受任意值
+```
    <div id="example">
         <script type="text/babel">
             var data = "BeiJing Cainiao";
