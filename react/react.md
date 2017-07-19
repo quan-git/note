@@ -82,7 +82,7 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
         <script type="text/babel">
                 var arr = [
                     <h1>欢迎来到北京菜鸟在线</h1>,
-                    <h2>我们现在学习是的React的语法知识.</h2>,
+                    <h2>我们现在学习是的React的语法知识.</h2>
                 ];
                 ReactDOM.render(<div>{arr}</div>, document.getElementById('example'));
         </script>
@@ -199,5 +199,6 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
     </div>
     ```
     > 表单
-    ```
-    
+```
+   "<h1>我就试试</h1>"
+```
