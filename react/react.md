@@ -185,7 +185,7 @@ var b={width:'100px',height:'100px'};
     var Mytitle = React.createClass({
         getDefaultProps: function(){     //用来设置属性默认值
            return{
-                title: "HTML5",
+                title: "HTML5"
             };
         },
         render: function(){
@@ -193,10 +193,12 @@ var b={width:'100px',height:'100px'};
         }
     });
     ReactDOM.render(
-        <Mytitle />,
+        <Mytitle />
         document.getElementById("example")
     );
     ```
+    
+    
  > this.state
  ```
  <div id="example">
