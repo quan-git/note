@@ -136,6 +136,9 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
         </script>
     </div>
     
+   在使用this.props.children的值有三种情况如果没有子节点就是undefined有一个子节点
+   数据类型是object如果是多个子节点数据类型是array,用到它时需要注意
+    
 ```
   
 >  属性可以接受任意值
@@ -210,6 +213,35 @@ React在这个虚拟DOM上实现了一个diff算法，当要更新组件时，�
         </script>
     </div>
 ```
+> 表单的使用
+```
+ <script type="text/babel">
+            var Input = React.createClass({
+                getInitialState: function(){
+                    return {value: 'Hello!'};
+                },
+                handleChange: function(event){   //当内容发生变化触发事件event事件
+                    this.setState({value: event.target.value});
+                },
+                render: function(){
+                    var value = this.state.value;
+                    return(
+                        <div>
+                            <input type="text" value = { value }
+                            onChange = {this.handleChange} />
+                            <p>{value}</p>
+                        </div>
+                    );
+                }
+            });
+            ReactDOM.render(
+                <Input />, document.getElementById('example')
+            );
+        </script>
+
+```
+
+
 # 设置标签样式
 > 第一种设置css样式
 ```
