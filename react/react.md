@@ -166,14 +166,14 @@ var b={width:'100px',height:'100px'};
             var data = "BeiJing Cainiao";
             var Mytitle = React.createClass({
                 propTypes: {                //因为属性可以接收任何值所以用这种机制来限制属性类型这里设置必须是字符串如果不是会在控制台
-                    title: React.PropTypes.string.isRequired, 输出错误效果显示
-                },
+                    title: React.PropTypes.string.isRequired 输出错误效果显示
+                }.
                 render: function(){
                     return <h1>{this.props.title}</h1>
                 }
             });
             ReactDOM.render(
-                <Mytitle title={data} />,
+                <Mytitle title={data} />.
                 document.getElementById("example")
             );
         </script>
@@ -181,7 +181,10 @@ var b={width:'100px',height:'100px'};
     ```
     
     
-    > getDefaulteProps
+    > getDefaulteProp
+    
+    
+    
     ```
     var data = "BeiJing Cainiao";
     var Mytitle = React.createClass({
@@ -228,7 +231,4 @@ var b={width:'100px',height:'100px'};
         </script>
     </div>
     ```
-    > 表单
-```
-   "<h1>我就试试</h1>"
-```
+  
