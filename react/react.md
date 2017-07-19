@@ -99,14 +99,16 @@ var b={width:'100px',height:'100px'};
                      document.getElementById('example'));
         </script>
     </div>
-    ```
+```
+
+
 >  jsx可以接收一个数组,会展开数组的所有成员
 ```
  <div id="example">
         <script type="text/babel">
                 var arr = [
-                    <h1>欢迎来到北京菜鸟在线</h1>,
-                    <h2>我们现在学习是的React的语法知识.</h2>
+                    <h1>欢迎来到北京菜鸟在线</h1>
+                    <h2>我们现在学习是的React的语法知识</h2>
                 ];
                 ReactDOM.render(<div>{arr}</div>, document.getElementById('example'));
         </script>
