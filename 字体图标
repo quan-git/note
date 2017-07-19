@@ -3,6 +3,7 @@
 只需要引入font awesome的css
 ```
 # bootstrap font
+
 ```
 引入三个资源
 1. jquery的js
@@ -39,4 +40,5 @@
   2.Font class
   引入项目css
   <i class="icon iconfont icon-xxx"></i>
+  ```
   
