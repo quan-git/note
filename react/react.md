@@ -159,7 +159,7 @@ var b={width:'100px',height:'100px'};
     
 ```
   
-> 属性 属性可以接受任意值
+>  属性可以接受任意值
 ```
    <div id="example">
         <script type="text/babel">
@@ -178,14 +178,13 @@ var b={width:'100px',height:'100px'};
             );
         </script>
     </div>
-    ```
+```
     
     
-    > getDefaulteProp
+>getDefaulteProp
     
     
-    
-    ```
+```
     var data = "BeiJing Cainiao";
     var Mytitle = React.createClass({
         getDefaultProps: function(){     //用来设置属性默认值
@@ -201,11 +200,12 @@ var b={width:'100px',height:'100px'};
         <Mytitle />
         document.getElementById("example")
     );
-    ```
+```
     
     
- > this.state
- ```
+>this.state
+
+```
  <div id="example">
         <script type="text/babel">
             var LikeButton = React.createClass({
@@ -230,5 +230,5 @@ var b={width:'100px',height:'100px'};
             );
         </script>
     </div>
-    ```
+```
   
