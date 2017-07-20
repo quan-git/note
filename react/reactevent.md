@@ -83,3 +83,54 @@ ReactDOM.render(
     ReactDOM.render(<FormInput></FormInput>, document.body);
  </script>
  ```
+# React Components生命周期
+```
+React组件拥有简洁的生命周期API它仅仅提供你所需的方法
+1. React Components生命周期有三种状态:
+Mounted:React Component被render解析,生成对应的DOM节点,并插入浏览器的DOM结构的过程这个过程结束就是这个组
+        件被Mounted插入真实dom
+Update:被mounted的React Component被重新render的过程 重新渲染
+Unmounted:一个被mounted的React Component对应的DOM节点被从DOM结构中移除的这样一个过程。 已移除真实的DOM
+
+2. React为每个状态提供了俩种处理函数:以will开头是在进入状态之前调用,did开头进入状态后调用
+
+3. 种5处理函数
+   componentWillMount(): 在渲染前调用, 在客户端也在服务端.
+   componentDidMount(): 在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.
+                        getDOMNode()来进行访问。 如果你想和JavaScript框架一起使用，可以在这个方法中
+                        调用setTimeout, setInterval或者发送AJAX请求等操作(防止异部操作阻塞UI)。
+   componentWillUpdate(object nextProps, object nextState): 在组件接收到一个新的prop时被调用。这个
+                                                            方法在初始化render时不会被调用。
+   componentDidUpdate(object nextProps, object nextState): 返回一个布尔值。在组件接收到新的props或
+                                                           者state时被调用。在初始化时或者使用force
+                                                           Update时不被调用。
+   componentWileUnmount(): 在组件从 DOM 中移除的时候立刻被调用。
+
+```
+> 实例化 Mounted
+```
+<script type="text/babel">
+      class Hello extends React.Component{   
+        constructor(props){       //constructor(props, context) 构造器准许你设置实例的属性以及组件的姿态.
+          super(props);
+          alert("aaaaa")
+        }
+        componentWillMount(){      //componentWillMount该方法会在完成首次渲染之前被调用. 这也是在 render 方法调用彰可以修改组件 stats 的                                      最后一次机会. 它的存在仅仅是为了体现生命周期完整性, 是 createClass 的遗留物, 现在已经被 constructor                                      替代.
+          alert('ComponentWillMount')
+        }
+        render(){                  //render在这里分创建一个虚拟 DOM, 用来表示组件的输出. 对于一个组件来说, render 是唯一一个必需的方法, 并                                      且有我特定的规则. render 方法需要满足下面几点:
+          alert('render');
+        return (
+          <div>
+            <h1>hello world!</h1>
+          </div>
+        )
+        }
+        componentDidMount(){        //componentDidMount在 render 方法成功调用并且真实的 DOM 已经被渲染之后, 可以在 componentDidMount                                         内部通过 ReactDOM.findDOMNode(this) 方法或是使用 ref 来访问它.
+          alert("DidMount!")
+        }
+      }
+      ReactDOM.render(<Hello />,
+      document.getElementById('root'));
+      </script>
+```
