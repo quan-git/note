@@ -1,6 +1,10 @@
 # 事件处理
 > 合成事件和原生事件 ?
+
+
 > 自动绑定上下文和事件委托 ?
+
+
 > 什么是原生事件 ?
 # 点击事件
 ```
@@ -56,9 +60,11 @@ ReactDOM.render(
       document.getElementById('example')
     );
     </script>
-    ```
-    # 表单事件
-    ```
+ ```
+ 
+# 表单事件
+ 
+ ```
     <script type="text/babel">
     var FormInput = React.createClass({
         submitHandler: function(event){
@@ -76,3 +82,4 @@ ReactDOM.render(
     });
     ReactDOM.render(<FormInput></FormInput>, document.body);
  </script>
+ ```
